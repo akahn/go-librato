@@ -113,15 +113,14 @@ func (m *MetricsService) Get(name string) (*Metric, *http.Response, error) {
 type MeasurementSubmission struct {
 	MeasureTime *uint               `json:"measure_time,omitempty"`
 	Source      *string             `json:"source,omitempty"`
-	Gauges      []*GaugeMeasurement `json:"gauges,omitempty"`
-	Counters    []*Measurement      `json:"counters,omitempty"`
+	Gauges      []*GaugeMeasurement `json:"measurements,omitempty"`
 }
 
 // Measurement represents a Librato Measurement.
 type Measurement struct {
 	Name        string   `json:"name"`
 	Value       *float64 `json:"value,omitempty"`
-	MeasureTime *uint    `json:"measure_time,omitempty"`
+	MeasureTime *uint    `json:"time,omitempty"`
 	Source      *string  `json:"source,omitempty"`
 }
 
